@@ -1,13 +1,17 @@
 package com.example.jobtracker.controller;
 
+import ch.qos.logback.core.model.Model;
+import com.example.jobtracker.model.JobApplication;
+import com.example.jobtracker.service.JobService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
-@Controller
-@RequestMapping("/apply")
+@RestController
+@RequestMapping("/api/job")
 public class JobControler {
     @Autowired
-    private JobApplicationService jobApplicationService;
+    private JobService jobApplicationService;
 
     @GetMapping("/status")
     public String checkStatusForm() {
@@ -16,13 +20,15 @@ public class JobControler {
 
     @PostMapping("/status")
     public String checkStatus(@RequestParam String email, Model model) {
-        JobApplication jobApplication = jobApplicationService.getJobApplicationByEmail(email);
+        JobApplication jobApplication = JobService.getJobApplicationByEmail(email);
         if (jobApplication != null) {
-            model.addAttribute("jobApplication", jobApplication);
+            model.addText("jobApplication");
             return "statusResult";
         } else {
-            model.addAttribute("message", "ไม่พบการสมัครงานสำหรับอีเมลนี้");
+            model.addText("message");
             return "checkStatusForm";
         }
     }
+
+
 }

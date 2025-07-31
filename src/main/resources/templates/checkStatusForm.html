@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>ตรวจสอบสถานะ</title>
+</head>
+<body>
+<h1>กรอกอีเมลเพื่อตรวจสอบสถานะ</h1>
+<form th:action="@{/apply/status}" method="post">
+  <input type="email" name="email" placeholder="Email" required />
+  <button type="submit">ตรวจสอบ</button>
+</form>
+
+<p th:if="${message}" th:text="${message}" style="color:red;"></p>
+</body>
+</html>

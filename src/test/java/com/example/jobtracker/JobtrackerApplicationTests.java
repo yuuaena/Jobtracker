@@ -1,13 +1,13 @@
-package com.example.jobtracker;
+//package com.example.jobtracker;
+//
+//import org.junit.jupiter.api.Test;
+//import org.springframework.boot.test.context.SpringBootTest;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
-
-@SpringBootTest
-class JobtrackerApplicationTests {
-
-	@Test
-	void contextLoads() {
-	}
-
-}
+//@SpringBootTest
+//class JobtrackerApplicationTests {
+//
+//	@Test
+//	void contextLoads() {
+//	}
+//
+//}

@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>ผลการสมัคร</title>
+</head>
+<body>
+<h1>ผลการสมัครงาน</h1>
+<p th:text="'ชื่อ: ' + ${jobApplication.name}"></p>
+<p th:text="'อีเมล: ' + ${jobApplication.email}"></p>
+<p th:text="'สถานะ: ' + ${jobApplication.status}"></p>
+</body>
+</html>
